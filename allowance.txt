@@ -1,0 +1,24 @@
+Dynamic Leave Allowance and Policy -- Public Holidays
+
+Overview: Each organization has a leave policy of its own. The application should be able to allow the user to create a new leave policy with different allowances and attach it to the user. so that it can be useful in restricting user usage of allowance.
+
+Eg: Fidisys has a leave policy document. It has various allowances like
+
+         1) Casual Leaves/Sick Leaves
+         2) Maternity Leaves
+         3) General Leaves
+         4) Compensatory Off (CO) 
+         5) Loss of Pay (LOP)
+
+these allowances have criteria like eligibility and entitlement
+
+eligibility: should have valid designation and experiance in the organization
+entitlement: 12 casual leaves per year
+
+a collections of allowances makes the leave policy for an user specifically.
+
+leave allowance now be connected to organisation then from organisation.
+
+add approver mail to leave request.
+
+

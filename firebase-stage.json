@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "fidi-stage",
+    "private_key_id": "b19746a2db1328db9b262f0c262aeb347504d168",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDGOdb5D9pIb59J\nKQvgSglBrWnav6cDB5jh867ADdE+1Jq4jfNSakoMK8fQsGma365jZMiXKPDGZAer\nxnz6jHOUZVov3FvasPFCh3eiR2szh7sOeYMN6HcNlJCmKvpQtJzdhITR+vJDn8yJ\ntQRrwv3bxIcA5+nO3ryScy05D6DiqPonZpxOOjpgfZi790Jq7cPocfy2QnQEnzFN\nNhr86U2pqY2VawT9JLtPRLOiXeC+aYqPIGis7tqwS9LfAjBuvKtbvuXZ18iuY27Z\n9eZDAd5gt264ZFuLqehjvNeTn30uMn3g0vN9WVam8efExU0cx7D9NfPaTp987HKA\nUsyQK1BnAgMBAAECggEANB1UxVpDmzOtfwCJnMgaMugyok4szIEc0prMYLXBQ3GF\n0+uOAybqnNSNzfHzccJJCNygWA1tb9swoRqoFP8EDAmxck/O3moSo9kVvNZl+sA+\nj4mmyOtLEYjzlpxJ/xnc++gxOztsohbLIZEzvlkfgL3keHqAX+DzVtVtGElhlPU9\nOCFOSY5UK24cqqtMX48nlaWZk7XblyTK62DhQSABEI9YkPMHQFSqPNwuGBnX6W5J\nMohtWdh+AZbxcW/QEw/PSLSUmN+IXYUnP8rBuXnFajioo4kv14gopxR20wf4bLa7\nSyA4VGcs9Pi1DJcdJoN4z989RG7+QCNt9RXmd2jN8QKBgQDyqeAIM/6JISU5uegk\nVw4Ma8egdmwQkgc7+eIEWbJwyE/0KcL0C6LVwwXYP3MkXQOVa97XYU2GH1ggtRsB\njhr2RR61VCSI7p5W4zvpisfXEL4c+0Tj+8KJ+bdPkAb9kguGy5FRGIf4lbNGysgk\nftd9AnlO4FpbTQawhtzTFYkjVQKBgQDRHsE7HwIbizR5JWvQkQsGbfBK73cSOFDJ\n2VlPGN6TLVs/I96e/liGKvNOQ0VPEUgz8cFn5cR01g5stnByYNszsu6PWlfa6Iv/\nnNYxycvM1QoQ7RYlRNeWSnJwwRSRufCV4qhtwho9WSlSialVs3kNr449zwLgU2mT\nIo9E6FMcywKBgQCrSlhW0gTpXVk+j0kbZcwH3oiybwVHCR1MK85sDbjUvcEac+Qm\nipQt2hUlGVy4nWOrNNK/K/MiKrv1koF2ro2/qvjLPJLxiaaBZLNk3k7ENBBOuttd\nJtiitn+8DMmyckXqp4VzPiK0yU8cOIXgpRyNJJLmp52AdzWyo+/6nGgKZQKBgCvl\nldBQQQQBI6GujkQ4viS6XS+NtuP3OFY2rr2gzc/9PGMzp16eq3x2dZ5fFqRzT0HA\nJMYngCa6bEq7vTz1Qe5HSDaFU13bZM/iX0ASSRqVOci1y+lE2zBsLjum/Cde7ba4\n3nwzu4hXOApgZVBdHTMXP/ePhd4LBGVjYsmnLxMjAoGAFNn3FAcxdJWV0bENuKa/\nX6TLRCdwc9b6SV7nrw7tA1l5m2XVh5q4WB4kCIBoKJsZDs4IAUGU1i8CcKN5vof0\nb/Ew4KoZ1t9r2eOiNy4ooAqHyiiqboHuINOA/EMXG/WMSkfVnK7xKJdXgQPWk9Q3\nzH9J7MXeIwRzNoPOaImzoew=\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-ynzvz@fidi-stage.iam.gserviceaccount.com",
+    "client_id": "112149734300662945109",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ynzvz%40fidi-stage.iam.gserviceaccount.com"
+  }
+  

@@ -1,0 +1,64 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "contact": {
+            "email": "naveen@fidisys.com",
+            "name": "Naveen Ben",
+            "url": "fidisyslt.herokuapp.com"
+        },
+        "title": "Leave Tracker Backend API",
+        "version": "0.0.3"
+    },
+    "paths": {
+        "/users": {
+            "description": "users resource"
+        },
+        "/leaves": {
+            "description": "leaves resource"
+        },
+        "/orgs": {
+            "description": "organisation resources"
+        }
+    },
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "name": "Authorization",
+                "type": "apiKey",
+                "in": "header",
+                "description": "Bearer Token ex Authorization {token}"
+            }
+        },
+        "schemas": {
+            "createUserSchema": {
+                "title": "userSchema",
+                "type": "object",
+                "description": "this is user schema",
+                "required": [
+                    "name",
+                    "email",
+                    "organisation"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "name of the user"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "email of the user"
+                    },
+                    "organisation": {
+                        "type": "string",
+                        "description": "organisation of the user"
+                    }
+                }
+            }
+        }
+    }
+}

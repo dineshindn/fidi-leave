@@ -1,0 +1,94 @@
+1 ) create admin and organisation.
+2 ) admin adds a user
+3 ) user logs in and creates an leave request 
+4 ) admin approves or rejects the leave request
+
+year/month/allowance/type.
+
+allowance :
+    casual:
+        used:1
+        left:2
+        total:3
+    sick:
+        used:0
+        left:2
+        total:2
+    annual:
+        used:0
+        left:2
+        total:2
+
+email and googleId for user validation.[done]
+check for if leave already taken [done]
+get users api route [done] 
+dashboard populate left used pending accepted [done]
+admin able to update user leave balance [done]
+ui for adduser button and adduser form [not done]
+show list of users for admin.[done]
+
+if anywhere orgid is need take it from the jwt.
+
+notifications
+when a user creates a req send that as notification to admin --> admin.notifications.add({
+
+    notificationId: idFromFirestore,
+    userName:naveen
+    message: raised a leave request on 
+    dateIso:dateIso
+    link: /leave/view/:id [future implementation]
+    notStatus: read|unread
+})
+
+when a user approves or rejects a req send that as notification to user --> user.notifications.add({
+
+        notificationId: idFromFirestore,
+        status:approved|rejected
+        adminName: pravallika
+        dateIso: dateIso
+        link: /leave/view/:id [future implementation]
+        notStatus: read|unread
+})
+
+endpoint for notifications
+
+GET /notifications/status will return JSON {
+    unreadNots: true|false
+    noOfnots: [user].notifications.query({notStatus:unread}) | 0
+}
+
+GET /notifications/list will return JSON {
+    nots:[ [user].notifications.query({}) ] array of notifications if offset is 0 else will return the next 10 notifications
+}
+
+
+PUT /notifications/:id/status/read to change the status of a notification to read 
+
+PUT /notifications/status/read to change all the status of a notifications to read
+
+PUT /notifications/:id/status/unread to change the status of a notification to unread
+
+PUT /notifications/status/unread to change all the status of a notifications to unread
+
+return recent leave first
+
+along with leaveRequests send the leaveRequest Count [done]
+
+work userExisted issue[done]
+
+rejected not working [ done ]
+
+add username to leave [done]
+
+user restrictions [pending]
+
+users - post / adduser - only admin can add user
+      - GET / listusers - only admin can list users
+      - GET /id user - userDashboard and for admin purpose
+      - PUT /id user - only admin can update user
+      - DELETE /id user - only admin can delete user
+      - PATCH /id user - user can only update certain fields of profile
+
+register -> if res has orgupdate true then update org else dont update org
+
+remove admin from the list of users

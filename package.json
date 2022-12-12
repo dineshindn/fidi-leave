@@ -1,0 +1,49 @@
+{
+  "name": "leavetrackerv2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run prod",
+    "heroku": "node index.js",
+    "dev": "cross-env NODE_ENV=dev nodemon index.js",
+    "test": "cross-env NODE_ENV=test jest -i tests",
+    "prod": "cross-env NODE_ENV=prod node index.js",
+    "start:dev": "npm run dev",
+    "start:prod": "npm run prod",
+    "start:test": "npm run test",
+    "test:unit": "jest -i tests/unit",
+    "test:integration": "jest -i tests/integration",
+    "test:e2e": "jest -i tests/e2e",
+    "test:coverage": "jest -i tests/coverage",
+    "test:watch": "cross-env NODE_ENV=test jest -i tests/unit/user.*.* --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "argon2": "^0.28.5",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.2.0",
+    "joi": "^17.6.0",
+    "moment": "^2.29.4",
+    "passport": "^0.6.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-jwt": "^4.0.0",
+    "swagger-jsdoc": "^6.2.1",
+    "swagger-ui-express": "^4.4.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.3.1",
+    "assert": "^2.0.0",
+    "cross-env": "^7.0.3",
+    "jest": "^28.1.0",
+    "pactum": "^3.1.7",
+    "supertest": "^6.2.3"
+  }
+}

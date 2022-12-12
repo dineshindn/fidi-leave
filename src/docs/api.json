@@ -1,0 +1,194 @@
+{
+    "info": {
+        "description": "Leave Tracker Application",
+        "title": "Leave Tracker API",
+        "version": "0.2.1",
+        "license": {
+            "name": "fidisys software license",
+            "url": "https://www.fidisys.com"
+        }
+    },
+    "openapi": "3.0.0",
+    "servers": [
+        {
+            "description": "the local dev server",
+            "url": "http://localhost:5000"
+        }
+    ],
+    "tags": [
+        {
+            "name": "User",
+            "description": "operations perfomed by the user depending on thier roles"
+        },
+        {
+            "name": "LeaveRequest",
+            "description": "operations performed by the user/approver on the leaveRequests Resource"
+        },
+        {
+            "name": "Team",
+            "description": "operations performed by the approver/admin on the team Resource"
+        },
+        {
+            "name": "LeavePolicy",
+            "description": "operations performed by the admin on the leavePolicy"
+        }
+    ],
+    "paths": {
+        "/users": {},
+        "/users/{id}": {},
+        "/leaveRequests": {},
+        "/leaveRequests/{id}": {},
+        "/teams": {},
+        "/teams/{id}": {},
+        "/leavepolicies": {},
+        "/leavepolicies/{id}": {}
+    },
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "name": "Authorization",
+                "type": "apiKey",
+                "in": "header",
+                "description": "Bearer Token ex Authorization {token}"
+            }
+        },
+        "schemas": {
+            "userSchema": {
+                "type": "object",
+                "description": "the schema of the user object",
+                "required": [
+                    "firstName",
+                    "lastName",
+                    "email"
+                ],
+                "properties": {
+                    "userId": {
+                        "type": "string",
+                        "title": "id"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "title": "firstName",
+                        "description": "the first name of the user",
+                        "example": "John"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "title": "lastName",
+                        "description": "the last name of the user",
+                        "example": "Wick"
+                    },
+                    "email": {
+                        "type": "string",
+                        "title": "email",
+                        "description": "the email of the user",
+                        "example": "john.wick@workmail.com"
+                    },
+                    "googleId": {
+                        "type": "string",
+                        "title": "googleId",
+                        "description": "the googleId of the user if signs in with google",
+                        "example": "123456789"
+                    },
+                    "role": {
+                        "type": "string",
+                        "title": "role",
+                        "default": "user",
+                        "enum": [
+                            "user",
+                            "approver",
+                            "admin"
+                        ]
+                    },
+                    "team": {
+                        "type": "array",
+                        "title": "teamId",
+                        "items": {
+                            "type": "string",
+                            "title": "teamId",
+                            "description": "the teamId of the user"
+                        }
+                    }
+                }
+            },
+            "leaveRequestSchema": {
+                "type": "object",
+                "description": "the schema of the leaveRequest object",
+                "required": [
+                    "fromDate",
+                    "toDate",
+                    "leaveType",
+                    "reason",
+                    "leaveQuantity"
+                ],
+                "properties": {
+                    "leaveRequestId": {
+                        "type": "string",
+                        "title": "id",
+                        "description": "the id of the leaveRequest automatically generated"
+                    },
+                    "userId": {
+                        "type": "string",
+                        "title": "userId",
+                        "description": "the id of the user who requested the leave",
+                        "example": "123456789"
+                    },
+                    "fromDate": {
+                        "type": "string",
+                        "title": "fromDate",
+                        "description": "the date the leave starts in ISO format",
+                        "example": "2020-01-01"
+                    },
+                    "toDate": {
+                        "type": "string",
+                        "title": "toDate",
+                        "description": "the date the leave ends in ISO format",
+                        "example": "2020-01-01"
+                    },
+                    "leaveType": {
+                        "type": "string",
+                        "title": "leaveType",
+                        "description": "the type of leave requested this is present from leave policy ",
+                        "example": "sick"
+                    },
+                    "reason": {
+                        "type": "string",
+                        "title": "reason",
+                        "description": "the reason for the leave",
+                        "example": "I am sick"
+                    },
+                    "leaveQuantity": {
+                        "type": "number",
+                        "title": "leaveQuantity",
+                        "description": "the quantity of leave requested",
+                        "example": "1",
+                        "format": "float"
+                    },
+                    "status": {
+                        "type": "string",
+                        "title": "status",
+                        "default": "pending",
+                        "enum": [
+                            "pending",
+                            "approved",
+                            "rejected"
+                        ]
+                    },
+                    "approverId": {
+                        "type": "string",
+                        "title": "approverId"
+                    },
+                    "teamId": {
+                        "type": "string",
+                        "title": "teamId"
+                    }
+                }
+            }
+        }
+    }
+}
