@@ -8,11 +8,11 @@ else{
 }
 module.exports = {
     PORT: process.env.PORT,
-    JWT_RT_SECRET: process.env.JWT_RT_SECRET,
-    JWT_RT_ALGORITHM: process.env.JWT_RT_ALGORITHM,
-    JWT_RT_EXP_Days: process.env.JWT_RT_EXP_DAYS,
-    JWT_AT_SECRET: process.env.JWT_AT_SECRET,
-    JWT_AT_ALGORITHM: process.env.JWT_AT_ALGORITHM,
-    JWT_AT_EXP_Hours: process.env.JWT_AT_EXP_HOURS,
+    JWT_RT_SECRET: 'secretrt',
+    JWT_RT_ALGORITHM: 'HS256',
+    JWT_RT_EXP_Days: 30,
+    JWT_AT_SECRET: 'secretat',
+    JWT_AT_ALGORITHM: 'HS256',
+    JWT_AT_EXP_Hours: 1,
     TEST_ENV: process.env.TEST_ENV
 }

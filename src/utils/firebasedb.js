@@ -9,7 +9,7 @@ else{
   require('dotenv').config();
 }
 
-const  serviceAccount = require(`../../${process.env.FIREBASE}`);
+const  serviceAccount = require(`../../firebase-stage.json`);
 // console.log(serviceAccount, "-----")
 firebase.initializeApp({
   credential: firebase.credential.cert(serviceAccount),
@@ -17,7 +17,7 @@ firebase.initializeApp({
 const firestoredb = firebase.firestore();
 
 const leavetrackerdb = firestoredb
-  .collection(`${process.env.NODE_ENV}`)
+  .collection(`dev`)
   .doc("leavetrackerdb");
 
 module.exports = leavetrackerdb;
