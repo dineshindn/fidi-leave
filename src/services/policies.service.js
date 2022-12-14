@@ -16,7 +16,8 @@ const createLeavePolicy = async (startMonth,endMonth,name,description,orgId)=>{
 }
 
 const getLeavePolicies = async (orgId)=>{
-    const leavePolicies = await leavetrackerdb.collection("policies").get();
+    console.log("orgId","==", orgId)
+    const leavePolicies = await leavetrackerdb.collection("policies").where("orgId","==", orgId).get();
     return leavePolicies.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
@@ -24,7 +25,7 @@ const getLeavePolicies = async (orgId)=>{
 }
 
 const getLeavePolicyById = async (orgId,leavePolicyId)=>{
-    const leavePolicy = await leavetrackerdb.collection("policies").doc(leavePolicyId).get();
+    const leavePolicy = await leavetrackerdb.collection("policies").where("orgId","==", orgId).doc(leavePolicyId).get();
     return {
         id: leavePolicy.id,
         ...leavePolicy.data(),

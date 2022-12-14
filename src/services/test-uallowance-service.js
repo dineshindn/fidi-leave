@@ -23,7 +23,7 @@ const getAllowances = async (userId) => {
 
 const getAllowanceById = async (userId,allowanceId) => {
     console.log("test.. 25", userId,allowanceId)
-    const allowance = await firebasedb.collection("userallowances").doc(allowanceId).get();
+    const allowance = await firebasedb.collection("userallowances").where("id","==", allowanceId).get();
     if (!allowance.exists) {
         throw new Error("Allowance does not exist");
     }
@@ -89,7 +89,7 @@ const deleteAllowance = async (userId,allowanceId) => {
 const getAllowanceSpecificData = async (userId, allowanceId,key) => {
     console.log("test.. 90", userId,allowanceId)
 
-    const allowance = await firebasedb.collection("userallowances").doc(allowanceId).get();
+    const allowance = await firebasedb.collection("userallowances").where("id", "==" ,allowanceId).get();
     console.log(allowance, "data result---")
     if (!allowance.exists) {
         throw new Error("Allowance does not exist--");

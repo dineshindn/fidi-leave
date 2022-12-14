@@ -18,6 +18,8 @@ const createAllowance = async (req, res) => {
         type,
         maxLimit,
         maxLimitAmount,
+        policyId,
+        orgId
       };
     } else {
       allowanceObject = {
@@ -25,8 +27,11 @@ const createAllowance = async (req, res) => {
         amount,
         type,
         maxLimit: false,
+        policyId,
+        orgId
       };
     }
+    console.log("dines", allowanceObject)
     const createdAllowance = await allowanceService.createAllowance(
       orgId,
       policyId,

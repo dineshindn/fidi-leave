@@ -18,6 +18,7 @@ const createLeaveType = async (label,value,description,color,orgId)=>{
 }
 
 const getLeaveTypes = async (orgId)=>{
+    console.log("orgId", "==", orgId)
     const leaveTypes = await leavetrackerdb.collection("leavetypes").where("orgId", "==", orgId).get();
     return leaveTypes.docs.map((doc) => ({
         id: doc.id,

@@ -1,7 +1,7 @@
 const firebasedb = require("../utils/firebasedb");
 const createAllowance = async (orgId,policyId,allowanceObject) => {
-
-    const createAllowance = await firebasedb.collection("orgs").doc(orgId).collection("policies").doc(policyId).collection("allowances").add(allowanceObject);
+    console.log("allowanceObject", allowanceObject)
+    const createAllowance = await firebasedb.collection("allowances").add(allowanceObject);
     return {
         id: createAllowance.id,
     }
@@ -14,6 +14,7 @@ const getAllowances = async (orgId,policyId) => {
     allowances.forEach((doc) => {
         allowancesArray.push({
             id: doc.id,
+            allowanceId: doc.id,
             ...doc.data(),
         });
     });
