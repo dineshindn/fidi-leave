@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run prod",
+    "start1": "npm run prod",
     "heroku": "node index.js",
-    "dev": "cross-env NODE_ENV=dev nodemon index.js",
+    "start": "cross-env NODE_ENV=dev node index.js",
     "test": "cross-env NODE_ENV=test jest -i tests",
     "prod": "cross-env NODE_ENV=prod node index.js",
     "start:dev": "npm run dev",
