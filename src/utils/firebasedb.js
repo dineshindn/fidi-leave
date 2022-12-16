@@ -18,6 +18,6 @@ const firestoredb = firebase.firestore();
 
 const leavetrackerdb = firestoredb
   .collection(`dev`)
-  .doc("leavetrackerdb");
+  .doc("leavetrackerdb1");
 
 module.exports = leavetrackerdb;
