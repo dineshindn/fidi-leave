@@ -51,11 +51,11 @@ const createUser = async (userBody) => {
       policyAllowances = await allowanceService.getAllowances(orgId, policyId);
       policyAllowances.forEach(async (policyAllowance) => {
         await leavetrackerdb
-          // .collection("users")
-          // .doc(addUser.id)
-          .collection("userallowances")
-          // .doc(policyAllowance.id)
-          .add({
+          .collection("users")
+          .doc(addUser.id)
+          .collection("allowances")
+          .doc(policyAllowance.id)
+          .set({
             ...policyAllowance,
             used: 0,
             amount: parseInt(policyAllowance.amount),
@@ -203,9 +203,9 @@ const setLeaveAllowance = async (userId, leaveType, amount) => {
 const updateLeaveallowance = async (userId, amount, allowanceId) => {
   try {
     const userAlowance = await leavetrackerdb
-      // .collection("users")
-      // .doc(userId)
-      .collection("userallowances")
+      .collection("users")
+      .doc(userId)
+      .collection("allowances")
       .doc(allowanceId)
       .get();
     if (!userAlowance.exists) {
@@ -222,9 +222,9 @@ const updateLeaveallowance = async (userId, amount, allowanceId) => {
       throw new Error("Leave allowance updating error");
     }
     const allowanceUpdate = await leavetrackerdb
-      // .collection("users")
-      // .doc(userId)
-      .collection("userallowances")
+      .collection("users")
+      .doc(userId)
+      .collection("allowances")
       .doc(allowanceId)
       .update({
         used: allowanceData.used + amount,
