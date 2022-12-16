@@ -35,7 +35,7 @@ const getAllowanceById = async (userId,allowanceId) => {
        
       }));
     console.log(abc, "abc")
-    // return abc;
+    return abc;
     // return {
     //     id: allowance.id,
     //     ...allowance.data(),
