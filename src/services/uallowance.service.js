@@ -23,14 +23,23 @@ const getAllowances = async (userId) => {
 
 const getAllowanceById = async (userId,allowanceId) => {
     console.log("test.. 25", userId,allowanceId)
-    const allowance = await firebasedb.collection("userallowances").doc(allowanceId).get();
-    if (!allowance.exists) {
-        throw new Error("Allowance does not exist");
-    }
-    return {
-        id: allowance.id,
-        ...allowance.data(),
-    }
+    const allowance = await firebasedb.collection("userallowances").where("allowanceId","==",allowanceId).get();
+    // if (!allowance.exists) {
+    //     throw new Error("Allowance does not exist..1");
+    // }
+
+    const abc=  allowance.docs.map((allowances) => ({
+       
+          id: allowances.data().id,
+          ...allowances.data(),
+       
+      }));
+    console.log(abc, "abc")
+    // return abc;
+    // return {
+    //     id: allowance.id,
+    //     ...allowance.data(),
+    // }
 
 }
 
@@ -89,16 +98,26 @@ const deleteAllowance = async (userId,allowanceId) => {
 const getAllowanceSpecificData = async (userId, allowanceId,key) => {
     console.log("test.. 90", userId,allowanceId)
 
-    const allowance = await firebasedb.collection("userallowances").doc(allowanceId).get();
-    console.log(allowance, "data result---")
-    if (!allowance.exists) {
-        throw new Error("Allowance does not exist--");
-    }
-    const allowanceData = {
-        id: allowance.id,
-        ...allowance.data(),
-    }
-    return allowanceData[key];
+    const allowance = await firebasedb.collection("userallowances").where("id","==",allowanceId).get();
+    console.log(allowance, "data result---", allowance.exists, )
+    // if (!allowance.exists) {
+    //     throw new Error("Allowance does not exist--");
+    // }
+    // const allowanceData = {
+    //     id: allowance.id,
+    //     ...allowance.data(),
+    // }
+
+    return allowance.docs.map((allowances) => {
+        console.log(allowances, allowances.data().id, "allowances.id")
+        return {
+          id: allowances.data().id,
+          ...allowances.data(),
+        };
+      });
+
+    // console.log(allowanceData, "allowanceData")
+    // return allowanceData[key];
 }
 module.exports = {
     createAllowance,
